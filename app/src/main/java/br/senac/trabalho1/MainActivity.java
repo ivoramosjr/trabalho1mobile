@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
     private void carregarPontos() {
         System.out.println("Limpando as views que estão no layout...");
         LinearLayout layout = (LinearLayout) findViewById(R.id.layoutPontos);
-        layout.removeAllViews();
 
         System.out.println("Carregando horas...");
         Calendar calendar = GregorianCalendar.getInstance();
@@ -65,11 +64,17 @@ public class MainActivity extends AppCompatActivity {
 
         int qtdPontos = calculaQuantidadePontos(hora);
 
-        for (int i=0; i< qtdPontos; i++) {
-            EditText editText = new EditText(this);
-            editText.setHint(geraStringHoras(i));
-            editText.setSingleLine(true);
-            layout.addView(editText);
+        if (hora < 9) {
+            layout.removeAllViews();
+        }
+
+        if (layout.getChildCount() < qtdPontos) {
+            for (int i=layout.getChildCount(); i< qtdPontos; i++) {
+                EditText editText = new EditText(this);
+                editText.setHint(geraStringHoras(i));
+                editText.setSingleLine(true);
+                layout.addView(editText);
+            }
         }
     }
 
