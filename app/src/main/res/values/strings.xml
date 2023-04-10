@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Software Pontus</string>
+    <string name="cargo">Cargo: Desenvolvedora Fullstack</string>
+    <string name="lotacao">Lotação: TI</string>
+    <string name="matricula">Matrícula: 0089</string>
+    <string name="nome">Nome: Carolina Silva Souza</string>
+    <string name="pontos">Horários para bater o ponto:</string>
+    <string name="informar">Informar atividades</string>
+    <string name="horas">Horas:</string>
+</resources>
